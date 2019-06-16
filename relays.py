@@ -12,17 +12,16 @@ for pin in gpioPins:
 def up():
     try:
         GPIO.output(gpioPins[0], GPIO.LOW)
-        time.sleep(36) #<-- set this for up and down time preset
+        time.sleep(36)
         GPIO.output(gpioPins[0], GPIO.HIGH)
     except KeyboardInterrupt:
         GPIO.cleanup()
 
+
 def down():
     try:
         GPIO.output(gpioPins[1], GPIO.LOW)
-        time.sleep(34) #<-- set this for up and down time preset
+        time.sleep(36)
         GPIO.output(gpioPins[1], GPIO.HIGH)
     except KeyboardInterrupt:
         GPIO.cleanup()
-
-up()

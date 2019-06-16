@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request
-import down, up
+import relays
 
 app = Flask(__name__)
 
@@ -12,7 +12,7 @@ def home():
 def up():
     if request.method == 'POST':
         if request.form.get('up') == 'true':
-            up()
+            relays.up()
             print(request.method)
             return redirect(url_for('home'))
 
@@ -20,7 +20,7 @@ def up():
 def down():
     if request.method == 'POST':
         if request.form.get('down') == 'true':
-            down()
+            relays.down()
             print(request.method)
             return redirect(url_for('home'))
 
