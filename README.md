@@ -1,5 +1,6 @@
 [![GitHub license](https://img.shields.io/badge/Build-passing-green)](https://github.com/equineranch/desk_control)
-Program updated on 12-2-2019
+
+Updated on 12-2-2019
 
 This is a simple flask web app that I use to control two gpio pins for my motorized standup desk.  
 One pin controls up and the other controls down. This is very simple, time.sleep function is specific for my desk height presets.
