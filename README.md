@@ -11,3 +11,6 @@ To install, simply:
 4. sudo apt-get update
 5. sudo apt-get -y install python-dev python3-rpi.gpio
 6. Then run flask application by "flask app.py"
+
+[![GitHub license](https://img.shields.io/github/license/equineranch/desk_control)](https://github.com/equineranch/desk_control)
+[![GitHub license](https://img.shields.io/badge/Build-passing-green)](https://github.com/equineranch/desk_control)
