@@ -1,3 +1,4 @@
+[![GitHub license](https://img.shields.io/badge/Build-passing-green)](https://github.com/equineranch/desk_control)
 Program updated on 12-2-2019
 
 This is a simple flask web app that I use to control two gpio pins for my motorized standup desk.  
@@ -12,5 +13,5 @@ To install, simply:
 5. sudo apt-get -y install python-dev python3-rpi.gpio
 6. Then run flask application by "flask app.py"
 
-[![GitHub license](https://img.shields.io/github/license/equineranch/desk_control)](https://github.com/equineranch/desk_control)
-[![GitHub license](https://img.shields.io/badge/Build-passing-green)](https://github.com/equineranch/desk_control)
+
+
