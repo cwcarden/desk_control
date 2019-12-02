@@ -1,27 +1,26 @@
-import RPi.GPIO as GPIO
+import RPi.GPIO as IO
 import time
 
 #set GPIO mode to Broadcom SOC channel
-GPIO.setmode(GPIO.BCM)
+IO.setmode(IO.BCM)
 gpioPins =[2, 3]
 
 for pin in gpioPins:
-    GPIO.setup(pin, GPIO.OUT)
-    GPIO.output(pin, GPIO.HIGH)
+    IO.setup(pin, IO.OUT)
+    IO.output(pin, IO.HIGH)
 
 def up():
     try:
-        GPIO.output(gpioPins[0], GPIO.LOW)
+        IO.output(IOPins[0], IO.LOW)
         time.sleep(36)
-        GPIO.output(gpioPins[0], GPIO.HIGH)
+        IO.output(IOPins[0], IO.HIGH)
     except KeyboardInterrupt:
-        GPIO.cleanup()
-
+        IO.cleanup()
 
 def down():
     try:
-        GPIO.output(gpioPins[1], GPIO.LOW)
+        IO.output(IOPins[1], IO.LOW)
         time.sleep(36)
-        GPIO.output(gpioPins[1], GPIO.HIGH)
+        IO.output(IOPins[1], IO.HIGH)
     except KeyboardInterrupt:
         GPIO.cleanup()
