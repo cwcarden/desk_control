@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request
 import relays
 
 app = Flask(__name__)
-
+desk_up = False
 @app.route('/')
 @app.route('/home')
 def home():
@@ -11,9 +11,11 @@ def home():
 @app.route('/up', methods=['POST'])
 def up():
     if request.method == 'POST':
-        if request.form.get('up') == 'true':
+        if request.form.get('up') == 'true' and desk_up == False:
             relays.up()
             print(request.method)
+            return redirect(url_for('home'))
+        else:
             return redirect(url_for('home'))
 
 @app.route('/down', methods=['POST'])
