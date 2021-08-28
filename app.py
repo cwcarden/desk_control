@@ -1,30 +1,31 @@
 from flask import Flask, render_template, redirect, url_for, request
 import relays
 
+
 app = Flask(__name__)
-desk_up = False
-@app.route('/')
-@app.route('/home')
+
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('index.html', title='Desk Control')
-
-@app.route('/up', methods=['POST'])
-def up():
     if request.method == 'POST':
-        if request.form.get('up') == 'true' and desk_up == False:
+        if request.form.get('up') == 'up':
             relays.up()
-            print(request.method)
-            return redirect(url_for('home'))
-        else:
-            return redirect(url_for('home'))
 
-@app.route('/down', methods=['POST'])
-def down():
-    if request.method == 'POST':
-        if request.form.get('down') == 'true':
+        elif request.form.get('stop_up') == 'stop':
+            relays.stop_up()
+
+        if request.form.get('down') == 'down':
             relays.down()
-            print(request.method)
-            return redirect(url_for('home'))
+
+        elif request.form.get('stop_down') == 'stop':
+            relays.stop_down()
+
+        else:
+            return render_template('index.html', title='Desk Control')
+    elif request.method == 'GET':
+        print("No Post Back Call")
+    return render_template('index.html')
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port= 5000)

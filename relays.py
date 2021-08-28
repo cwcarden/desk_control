@@ -10,17 +10,13 @@ for pin in gpioPins:
     IO.output(pin, IO.HIGH)
 
 def up():
-    try:
-        IO.output(IOPins[0], IO.LOW)
-        time.sleep(36)
-        IO.output(IOPins[0], IO.HIGH)
-    except KeyboardInterrupt:
-        IO.cleanup()
+    IO.output(gpioPins[0], IO.LOW)
 
 def down():
-    try:
-        IO.output(IOPins[1], IO.LOW)
-        time.sleep(36)
-        IO.output(IOPins[1], IO.HIGH)
-    except KeyboardInterrupt:
-        GPIO.cleanup()
+    IO.output(gpioPins[1], IO.LOW)
+
+def stop_up():
+    IO.output(gpioPins[0], IO.HIGH)
+
+def stop_down():
+    IO.output(gpioPins[1], IO.HIGH)

@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Desk Control</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.75">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title>My Desk Control</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
 
-</style>
-<center><body>
-  <h1></h1>
-<div class="forms">
-<fieldset>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col md-12">
 
-<form method="post" action="/up">   
-<ol><legend>Desk Height Control</legend></ol>
-<ol><button type="submit" value="true" name="up" class="btn btn-primary">UP</button></ol>
-</form>
+                    <div class="jumbotron p-3">
+                        <center><h2><b>Desk Control</b></h2></center>
 
-<form method="post" action="/down">   
-<ol><button type="submit" value="true" name="down" class="btn btn-primary">DOWN</button></ol>
-</form>
+        <table class="table table-hover table-dark"
+            <tr>
+                <th>Desk Position</th>
+                <th>Status</th>
+                <th>Desk Control</th>
+            </tr>
 
+            <tr>
+                <td>Up Position</td>
+                <td><b>Current Status</b></td>
+                <td>
+                    <form method="post" action="/">
+                        <div class="btn-group">
+                        <input type="submit" class="btn btn-outline-warning btn-xs" value="up" name="up"/>
+                        <input type="submit" class="btn btn-outline-danger btn-xs" value="stop" name="stop_up"/>
+                        </div></form>
+                </td>
 
-        </fieldset>
-  </body></center>
-</html>
+                <tr>
+                </tr>
+
+                <tr>
+                    <td>Down Position</td>
+                    <td><b>Current Status</b></td>
+                        <td>
+                            <form method="post" action="/">
+                                <div class="btn-group">
+                                    <input type="submit" class="btn btn-outline-warning btn-xs" value="down" name="down"/>
+                                    <input type="submit" class="btn btn-outline-danger btn-xs" value="stop" name="stop_down"/>
+                                </div></form>
+                        </td>
+
+                    </div>
+                </div>
+            </div>
+        </div>
